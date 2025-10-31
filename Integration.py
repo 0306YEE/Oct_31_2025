@@ -69,7 +69,7 @@ def delete_student():
     cursor.excute('SELECT *from DB_student where db_student_id =?',(student_id,))
     delete =cursor.fetchall()
     cursor.excute('Delete *from DB_student where db_student_id =?',(student_id,))
-    print('Fallowing rows are delete:' ,delete)
+    print('Fallowing row is delete:' ,delete)
     conn.commit()
 
 
