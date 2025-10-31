@@ -50,8 +50,8 @@ def create_student():
     print ('Student Name: {}'.format(student_name))
     print ('-' * 30)
 
-button_create = tk.Button(root, text='Create', command=create_student)
-button_create.pack(pady=20)
+botton_create = tk.Button(root, text='Create', command=create_student)
+botton_create.pack(pady=20)
 
 # def a overview_student()
 # show all records in sqlite
@@ -66,12 +66,13 @@ botton_overview.pack(pady=25)
 
 def delete_student():
     student_id = entry_id.get()
-    cursor.excute('SELECT *from DB_student where db_student_id =?',(student_id,))
+    cursor.execute('SELECT * from DB_student where db_student_id =?',(student_id,))
     delete =cursor.fetchall()
-    cursor.excute('Delete *from DB_student where db_student_id =?',(student_id,))
+    cursor.execute('Delete from DB_student where db_student_id =?',(student_id,))
     print('Fallowing rows are delete:' ,delete)
     conn.commit()
 
-
+botton_delete = tk.Button(root, text='delete' ,command =delete_student)
+botton_delete.pack(pady=25)
 
 root.mainloop() #must be put to the end of programming code
